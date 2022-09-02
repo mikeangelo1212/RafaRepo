@@ -5,4 +5,4 @@ nombre=input()
 print("Teclee su apellido: ")
 apellido=input()
 
-print((nombre+" "+apellido)[::-1])
+print((nombre+" "+apellido)[::-1])#[::-1] esto lo reversea
