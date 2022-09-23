@@ -40,29 +40,31 @@ while True:
         input("\nIngrese su CURP: "),
         input("\nIngrese su ciudad: "))
         for i in usuarios:
-            if miUsuario==i.CURP:
+            if miUsuario.CURP==i.CURP:
                 os.system("cls")
                 print("El usuario ya existe")
-                continue
-            else:
-                os.system("cls")
-                usuarios.append(miUsuario)
-                print("==Usuario capturado==\n")
                 break
+        else:
+            os.system("cls")
+            usuarios.append(miUsuario)
+            print("==Usuario capturado==\n")
+            continue
                 
     elif opcion==2:
         x=input("Ingrese su usuario: ")
         y=input("Ingrese su contraseña: ")
+        os.system("cls")
         for i in usuarios:
             if i.Usuario==x and i.Contrasena==y and i.Rol=="Administrador":
                 print("\nBienvenido administrador")
                 for i in usuarios:
                     print(i.__str__())
-            
+                    break
             elif i.Usuario==x and i.Contrasena==y:
-                print(f"Hola {i.Rol}\n")
+                print(f"\nHola {i.Rol}\n")
                 print(i.__str__())
-            else:os.system("cls");print("====Usuario no encontrado====\n")
+                break
+        else: os.system("cls");print("====Usuario no encontrado====\n")
     else:
         print("Adios")
         break
