@@ -12,4 +12,4 @@ while True:
 
     if x>=15:
         break
-print(l)#ESTA NO JALA TODAVIA
+print(l)
