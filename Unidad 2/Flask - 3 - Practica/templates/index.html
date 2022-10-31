@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+<body>
+    <h1>Listado completo</h1>
+    <div>
+        <br>
+        <h3>Personas</h3>
+        <div>
+            <a href="{{url_for('agregarPersona')}}">Agregar Persona</a>
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>EMAIL</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for persona in personas %}
+                <tr>
+                    <td>{{persona.id}}</td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.apellido}}</td>
+                    <td>{{persona.email}}</td>
+                    <td> <a href="verPersona/{{persona.id}}">VER</a></td>
+                    <td><a href="editarPersona/{{persona.id}}">EDITAR</a></td>
+                    <td><a href="eliminarPersona/{{persona.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Direccciones</h3>
+        <a href="{{url_for('agregarDireccion')}}">Agregar direccion</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NUMERO DE CALLE</th>
+                    <th>NOMBRE DE CALLE</th>
+                    <th>PERSONA</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for direccion in direcciones %}
+                <tr>
+                    <td>{{direccion.id}}</td>
+                    <td>{{direccion.numero}}</td>
+                    <td>{{direccion.calle}}</td>
+                    <td>{{direccion.idpersona}}</td>
+                    <td> <a href="verDireccion/{{direccion.id}}">VER</a></td>
+                    <td><a href="editarDireccion/{{direccion.id}}">EDITAR</a></td>
+                    <td><a href="eliminarDireccion/{{direccion.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Perros</h3>
+        <a href="{{url_for('agregarPerro')}}">Agregar perro</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>RAZA</th>
+                    <th>EDAD</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for perro in perros %}
+                <tr>
+                    <td>{{perro.id}}</td>
+                    <td>{{perro.nombre}}</td>
+                    <td>{{perro.raza}}</td>
+                    <td>{{perro.edad}}</td>
+                    <td> <a href="verPerro/{{perro.id}}">VER</a></td>
+                    <td><a href="editarPerro/{{perro.id}}">EDITAR</a></td>
+                    <td><a href="eliminarPerro/{{perro.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>

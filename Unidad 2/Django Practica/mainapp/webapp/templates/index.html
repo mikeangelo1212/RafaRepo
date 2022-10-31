@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabla de trabajadores</h1>
+    <div>
+        <a href="nuevo_trabajador"> Agregar trabajador</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in trabajadores %}
+                <tr>
+                    <td>{{u.id}}</td>
+                    <td>{{u.nombre}} {{u.apellido}}</td>
+                    <td>{{u.email}}</td>
+                    <td><a href="detalle_trabajador/{{u.id}}"> Ver Detalle</a></td>
+                    <td><a href="editar_trabajador/{{u.id}}"> Editar trabajador</a></td>
+                    <td><a href="eliminar_trabajador/{{u.id}}"> Eliminar trabajador</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="tabla_jefes"> Tabla Jefes </a>
+        <br>
+        <a href="tabla_dom"> Tabla Domicilio </a>
+        <br>
+        <a href="tabla_depa"> Tabla Departamento </a>
+    </div>
+
+</body>
+</html>

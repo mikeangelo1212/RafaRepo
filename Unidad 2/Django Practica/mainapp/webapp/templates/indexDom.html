@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabla de Domicilio</h1>
+    <div>
+        <a href="nuevo_dom"> Agregar Domicilio </a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Calle</th>
+                    <th>Numero Calle</th>
+                    <th>Pais</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in doms %}
+                <tr>
+                    <td>{{u.id}}</td>
+                    <td>{{u.calle}}</td>
+                    <td>{{u.no_calle}}</td>
+                    <td>{{u.pais}}</td>
+                    <td><a href="detalle_dom/{{u.id}}"> Ver Detalle</a></td>
+                    <td><a href="editar_dom/{{u.id}}"> Editar Domicilio</a></td>
+                    <td><a href="eliminar_dom/{{u.id}}"> Eliminar Domicilio</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="tabla_jefes"> Tabla Jefes </a>
+        <br>
+        <a href="tabla_depa"> Tabla Departamento </a>
+        <br>
+        <a href="/"> Tabla Trabajadores </a>
+    </div>
+
+</body>
+</html>

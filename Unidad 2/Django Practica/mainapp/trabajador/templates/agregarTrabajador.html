@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <form method="POST">
+            <h1> Agregar trabajador </h1>
+            <table>
+                {{formaTrabajador}}
+            </table>
+            <button type="sumbit">Enviar</button>
+            {% csrf_token %}
+        </form>
+        <a href="{% url 'index' %}"> Regresar inicio</a>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<body>
+<h1>Tabla de jefes</h1>
+<a href="nuevo_jefe"> Agregar jefe</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>departamento</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for j in jefes %}
+        <tr>
+            <td>{{j.id}}</td>
+            <td>{{j.nombreJefe}}</td>
+            <td>{{j.departamento}}</td>
+            <td><a href="detalle_jefe/{{j.id}}"> Ver Detalle</a></td>
+            <td><a href="editar_jefe/{{j.id}}"> Editar jefe</a></td>
+            <td><a href="eliminar_jefe/{{j.id}}"> Eliminar jefe</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<a href="tabla_dom"> Tabla Domicilio </a>
+<br>
+<a href="tabla_depa"> Tabla Departamento </a>
+<br>
+<a href="/"> Tabla Trabajadores </a>
+</body>
+</html>

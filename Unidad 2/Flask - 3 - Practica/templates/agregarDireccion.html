@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+</head>
+
+<style>
+body {
+    background-color: rgb(196, 196, 252);
+}
+h1 {
+  color: rgb(167, 75, 247);
+  font-family: verdana;
+  font-size: 300%;
+
+}
+p {
+  color: rgb(230, 54, 54);
+  font-weight: bolder;
+  font-family: courier;
+  font-size: 160%;
+}
+
+table{
+    background-color: azure;
+    color: crimson;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+</style>
+<body>
+    <div class="container">
+    <h1 >Agregar direccion</h1>
+    <form method="POST" id="form">
+        {{forma.csrf_token}}
+        <p id="numero">
+            {{forma.numero.label}}<br>
+            {{forma.numero(size=30)}}
+        </p>
+        <p id="calle">
+            {{forma.calle.label}} <br>
+            {{forma.calle(size=30)}}
+        </p>
+        <p id="idpersona">
+            {{forma.idpersona.label}} <br>
+            {{forma.idpersona(size=30)}}
+            <!-- <SELECT name="persona">
+                {% for p in personas %}
+                    <OPTION value={{p.id}}>{{p.id}} - {{p.nombre}} {{p.apellido}}</option>
+                {% endfor %}
+                </SELECT> -->
+        </p>
+        <p id="boton">
+            {{forma.enviar()}}
+        </p>
+    </form>
+
+    <h3>Personas</h3>
+        <table border="1" id="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for persona in personas %}
+                <tr>
+                    <td>{{persona.id}}</td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.apellido}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

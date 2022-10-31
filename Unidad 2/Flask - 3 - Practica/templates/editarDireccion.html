@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <h1>Editar direccion</h1>
+    <form method="POST">
+        {{forma.csrf_token}}
+        <!-- lo de arriba sirve pa traer todo-->
+        <p>
+            {{forma.calle.label}} <br>
+            {{forma.calle(size=30)}}
+        </p>
+        <p>
+            {{forma.numero.label}}<br>
+            {{forma.numero(size=30)}}
+        </p>
+        <p>
+            {{forma.idpersona.label}} <br>
+            {{forma.idpersona(size=30)}}
+            <!-- <SELECT name="persona">
+                {% for p in personas %}
+                    <OPTION value={{p.id}}>{{p.id}} - {{p.nombre}} {{p.apellido}}</option>
+                {% endfor %}
+                </SELECT> -->
+        </p>
+        <p>
+            {{forma.enviar()}}
+        </p>
+    </form>
+</body>
+</html>
