@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles</title>
+</head>
+<style>
+    body {
+        background-color: rgb(196, 196, 252);
+    }
+    h1 {
+      color: rgb(167, 75, 247);
+      font-family: verdana;
+      font-size: 300%;
+    
+    }
+    p {
+      color: rgb(230, 54, 54);
+      font-weight: bolder;
+      font-family: courier;
+      font-size: 160%;
+    }
+    
+    table{
+        background-color: azure;
+        color: crimson;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    </style>
+<body>
+    <h1>
+        ID:{{equipo.id}}<br>
+        Marca:{{equipo.marca}}<br>
+        Modelo:{{equipo.modelo}}<br>
+    </h1>
+    <a href="{{url_for('inicio')}}"> Regresar inicio</a>
+    
+</body>
+</html>

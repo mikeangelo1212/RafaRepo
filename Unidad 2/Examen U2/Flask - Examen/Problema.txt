@@ -1,0 +1,12 @@
+Crear una aplicacion usando Flask que permita realizar lo siguiente
+    No utilizar entidades usadas en las practicas *
+    Crear 5 entidades no relacionadas *
+    No se permitira acceder al CRUD de las entidades si no hay un usuario en la sesion
+    Crear CRUD de 2 entidades utilizando formularios y templates *
+    Agreagar manejo del Error 404 mediante uso del abort *
+    Agregar estilo a los formularios y pagina de Error *
+    Crear las siguientes rutas: (parece que esto es con el thunderclient)
+        Ruta para recibir toda la informacion de al menos 2 entidades en formato arreglo de JSONs
+        Ruta para obtener toda la informacion de un registro en la base de datos en formato JSON
+        Ruta para poder agregar registros mediante la peticion POST a 3 entidades
+        Ruta para eliminar mandando el id del registro a eliminar en el Header de la peticion (no URL, no body)

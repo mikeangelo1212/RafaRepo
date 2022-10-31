@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabla de maestros</h1>
+    <div>
+        <a href="nuevo_trabajador"> Agregar maestro</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>materia</th>
+                    <th>email</th>
+                    <th>domicilio</th>
+                    <th>escuela</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for m in maestros %}
+                <tr>
+                    <td>{{m.id}}</td>
+                    <td>{{m.nombre}} {{m.apellido}}</td>
+                    <td>{{m.materia}}</td>
+                    <td>{{m.email}}</td>
+                    <td>{{m.domicilio}}</td>
+                    <td>{{m.escuela}}</td>
+                    <td><a href="detalle_maestro/{{m.id}}"> Ver Detalle</a></td>
+                    <td><a href="editar_maestro/{{m.id}}"> Editar maestro</a></td>
+                    <td><a href="eliminar_maestro/{{m.id}}"> Eliminar maestro</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="tabla_Directivo"> Tabla directivos </a>
+        <br>
+        <a href="/"> Tabla alumnos </a>
+    </div>
+
+</body>
+</html>

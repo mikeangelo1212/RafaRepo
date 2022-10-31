@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+<style>
+    body {
+        background-color: rgb(196, 196, 252);
+    }
+    h1 {
+      color: rgb(167, 75, 247);
+      font-family: verdana;
+      font-size: 300%;
+    
+    }
+    p {
+      color: rgb(230, 54, 54);
+      font-weight: bolder;
+      font-family: courier;
+      font-size: 160%;
+    }
+    
+    table{
+        background-color: azure;
+        color: crimson;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    </style>
+<body>
+    <h1>Listado completo</h1>
+    <div class="container">
+        <br>
+        <h3>Empleado</h3>
+        <div>
+            <a href="{{url_for('agregarEmpleado')}}">Agregar empleado</a>
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>GRADO ACADEMICO</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empleado in empleados %}
+                <tr>
+                    <td>{{empleado.id}}</td>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.gradoAcademico}}</td>
+                    <td> <a href="verEmpleado/{{empleado.id}}">VER</a></td>
+                    <td><a href="editarEmpleado/{{empleado.id}}">EDITAR</a></td>
+                    <td><a href="eliminarEmpleado/{{empleado.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Equipos</h3>
+        <a href="{{url_for('agregarEquipo')}}">Agregar equipo</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MARCA</th>
+                    <th>MODELO</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for equipo in equipos %}
+                <tr>
+                    <td>{{equipo.id}}</td>
+                    <td>{{equipo.marca}}</td>
+                    <td>{{equipo.modelo}}</td>
+                    <td> <a href="verEquipo/{{equipo.id}}">VER</a></td>
+                    <td><a href="editarEquipo/{{equipo.id}}">EDITAR</a></td>
+                    <td><a href="eliminarEquipo/{{equipo.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Autos</h3>
+        <a href="{{url_for('agregarAuto')}}">Agregar auto</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MARCA</th>
+                    <th>MODELO</th>
+                    <th>AÑO DE SALIDA</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for auto in autos %}
+                <tr>
+                    <td>{{auto.id}}</td>
+                    <td>{{auto.marca}}</td>
+                    <td>{{auto.modelo}}</td>
+                    <td>{{auto.anoDeSalida}}</td>
+                    <td> <a href="verAuto/{{auto.id}}">VER</a></td>
+                    <td><a href="editarAuto/{{auto.id}}">EDITAR</a></td>
+                    <td><a href="eliminarAuto/{{auto.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <br>
+        <h3>celulares</h3>
+        <a href="{{url_for('agregarCelular')}}">Agregar celular</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MODELO</th>
+                    <th>MARCA</th>
+                    <th>SISTEMA OPERATIVO</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for celular in celulares %}
+                <tr>
+                    <td>{{celular.id}}</td>
+                    <td>{{celular.modelo}}</td>
+                    <td>{{celular.marca}}</td>
+                    <td>{{celular.sistemaOperativo}}</td>
+                    <td> <a href="verCelular/{{celular.id}}">VER</a></td>
+                    <td><a href="editarCelular/{{celular.id}}">EDITAR</a></td>
+                    <td><a href="eliminarCelular/{{celular.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>albumes</h3>
+        <a href="{{url_for('agregarAlbum')}}">Agregar album</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>BANDA</th>
+                    <th>GENERO</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for album in albumes %}
+                <tr>
+                    <td>{{album.id}}</td>
+                    <td>{{album.nombre}}</td>
+                    <td>{{album.banda}}</td>
+                    <td>{{album.genero}}</td>
+                    <td> <a href="verAlbum/{{album.id}}">VER</a></td>
+                    <td><a href="editarAlbum/{{album.id}}">EDITAR</a></td>
+                    <td><a href="eliminarAlbum/{{album.id}}">ELIMINAR</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        
+    </div>
+</body>
+</html>
